@@ -26,7 +26,7 @@ object Main {
   // note the usage of case statment and pattern matching in scala
   def balance(chars: List[Char]): Boolean = {
     def matchLoop (x: Int, chars: List[Char]): Boolean = {
-      if (chars.isEmpty) true
+      if (chars.isEmpty) x == 0
       else (x, chars.head) match {
         case (0, ')') => return false // must use return to force exit
         case (x, '(') => matchLoop(x + 1, chars.tail)
